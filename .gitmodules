@@ -1,0 +1,3 @@
+[submodule "deps/wirehair"]
+	path = deps/wirehair
+	url = https://github.com/catid/wirehair

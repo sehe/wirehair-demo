@@ -1,0 +1,11 @@
+*.cmake
+*.o
+.cache/
+.clangd/
+CMakeCache.txt
+CMakeFiles/
+assets/
+Session.vim
+compile_commands.json
+wirehair-demo
+tags
