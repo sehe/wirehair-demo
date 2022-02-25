@@ -6,12 +6,15 @@ FIND_PACKAGE(Boost 1.75.0 REQUIRED)
 INCLUDE_DIRECTORIES(SYSTEM ${Boost_INCLUDE_DIRS})
 
 ADD_SUBDIRECTORY(deps/wirehair EXCLUDE_FROM_ALL)
+ADD_SUBDIRECTORY(deps/fmt EXCLUDE_FROM_ALL)
 INCLUDE_DIRECTORIES(SYSTEM deps/wirehair/include)
+INCLUDE_DIRECTORIES(SYSTEM deps/fmt/include)
 
 SET(CMAKE_CXX_COMPILER g++-10)
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Wconversion")
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2a")
+#SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=undefined,address")
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ggdb -O3 -pthread")
 
 ADD_EXECUTABLE(wirehair-demo wirehair-demo.cpp)
-TARGET_LINK_LIBRARIES(wirehair-demo wirehair)
+TARGET_LINK_LIBRARIES(wirehair-demo wirehair fmt)

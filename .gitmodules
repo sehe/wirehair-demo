@@ -1,3 +1,6 @@
 [submodule "deps/wirehair"]
 	path = deps/wirehair
 	url = https://github.com/catid/wirehair
+[submodule "deps/fmt"]
+	path = deps/fmt
+	url = https://github.com/fmtlib/fmt
